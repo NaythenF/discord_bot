@@ -1,7 +1,7 @@
 import os
 import random
 import discord
-import hangman as hang
+import old_hangman as hang
 from dotenv import load_dotenv
 from discord.ext import commands
 

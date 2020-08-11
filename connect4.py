@@ -24,7 +24,7 @@ class connect4(cmd.Cog):
     async def c4(self, ctx, name):
         if not self.game_in_progress:
             members = [member.name for member in discord.utils.get(self.bot.guilds, name=self.guild).members]
-            if name not in members:
+            if name[1:] not in members:
                 await ctx.send(f'Sorry, {ctx.author.name}. I can\'t seem to find the person you want to play with.')
                 return
             self.game_in_progress = True
