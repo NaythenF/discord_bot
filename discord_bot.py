@@ -1,7 +1,8 @@
 import os
 import random
 import discord
-import old_hangman as hang
+import hangman as hang
+import oh_queue as oh
 from dotenv import load_dotenv
 from discord.ext import commands
 
@@ -14,6 +15,7 @@ GUILD = os.getenv('DISCORD_GUILD')
 bot = commands.Bot(command_prefix='$')
 # add cogs
 bot.add_cog(hang.hangman(bot, "dictionary.txt"))
+bot.add_cog(oh.oh_queue())
 # ------------------------------------ #
 # EVENTS                               #
 # ------------------------------------ #
@@ -62,7 +64,7 @@ async def nine_nine(ctx):
         'Bingpot!',
         (
             'Cool. Cool cool cool cool cool cool cool cool, '
-            'no doubt no doubt no doubt no doubt.'
+            'no doubt no doubt no dobut no doubt.'
         ),
     ]
     response = random.choice(brooklyn_99_quotes)
